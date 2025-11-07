@@ -1,113 +1,81 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TogetherWeGrow | Membership Application</title>
+<!-- TogetherWeGrow Get Involved Section -->
+<section style="background: linear-gradient(135deg, #e8f5e9, #ffffff); padding: 50px 20px; text-align: center; font-family: 'Poppins', sans-serif;">
+  <h2 style="color: #2e7d32; font-size: 2rem; font-weight: 700; margin-bottom: 10px;">🌱 Join the Movement — TogetherWeGrow</h2>
+  <p style="color: #333; font-size: 1.1rem; max-width: 700px; margin: 0 auto 30px;">
+    Let’s build a community of 1 million members united by hope, contribution, and shared success.
+    Apply to join or support the vision by donating today — every ₦1 makes a difference!
+  </p>
 
-  <style>
-    body {
-      font-family: "Segoe UI", Arial, sans-serif;
-      background-color: #f3f7f3;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-    }
-
-    header {
-      background-color: #2e7d32;
-      color: white;
-      padding: 20px;
-      font-size: 1.5rem;
-      font-weight: bold;
-    }
-
-    p.description {
-      font-size: 1.1rem;
-      color: #333;
-      margin: 20px auto;
-      max-width: 700px;
-      line-height: 1.6;
-    }
-
-    button {
-      background-color: #2e7d32;
-      color: white;
-      border: none;
-      padding: 15px 30px;
-      font-size: 1.1rem;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #1b5e20;
-    }
-
-    #formContainer {
-      display: none;
-      margin: 40px auto;
-      max-width: 700px;
-    }
-
-    iframe {
-      width: 100%;
-      height: 1200px;
-      border: none;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    footer {
-      margin-top: 40px;
-      padding: 20px;
-      color: #555;
-      font-size: 0.9rem;
-    }
-  </style>
-</head>
-<body>
-  <header>
-    TogetherWeGrow Cooperative 🌱
-  </header>
-
-  <p class="description">
-    Welcome to <strong>TogetherWeGrow</strong> — a cooperative community that empowers lives through unity, daily micro-savings, and mutual support.<br>
-    Click the button below to apply for membership and join our mission to build a 1-million-member empowerment network.
   </p>
   <div id="stats" style="margin: 30px auto; max-width: 600px; background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
   <h2 style="color:#2e7d32;">TogetherWeGrow Progress 🌱</h2>
-  <p style="font-size:1.2rem;">Total Registered Members: <strong id="memberCount">1 </strong></p>
-  <p style="font-size:1.2rem;">Donation Start By 15th December 2025: <strong id="memberCount"> </strong></p>
-  <p style="font-size:1.2rem;">voting start by 26th December 2025: <strong id="memberCount"> </strong></p>
-  <p style="font-size:1.2rem;">First beneficiary get Alert on January First 2026: <strong id="memberCount"> </strong></p>
-  <p style="font-size:1.2rem;">Total Contributions: <strong id="donationTotal">₦0 </strong></p>
+  <p style="font-size:1.2rem;">Total Registered Members <strong id="memberCount">526 </strong></p>
+  <p style="font-size:1.2rem;">Donation Start By 15th December 2025 <strong id="memberCount"> </strong></p>
+  <p style="font-size:1.2rem;">voting start by 26th December 2025 <strong id="memberCount"> </strong></p>
+  <p style="font-size:1.2rem;">First beneficiary get Alert on January First 2026 <strong id="memberCount"> </strong></p>
+  <p style="font-size:1.2rem;">Total Contribution Recived: <strong id="donationTotal">₦26,589:00 </strong></p>
 </div>
 
 
-  <button onclick="showForm()">Apply Now</button>
 
-  <div id="formContainer">
-    <iframe 
-      src="https://docs.google.com/forms/d/e/1FAIpQLSdyzaai6Wuf8AAxse4Q_bFU1QRXj63IghzYo8hBV9-UgfE__Q/viewform?embedded=true" 
-      width="640" height="1200" frameborder="0" marginheight="0" marginwidth="0">
-      Loading…
-    </iframe>
+  <!-- Buttons -->
+  <div style="display: flex; justify-content: center; flex-wrap: wrap; gap: 15px;">
+    <!-- Apply Now Button -->
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSdyzaai6Wuf8AAxse4Q_bFU1QRXj63IghzYo8hBV9-UgfE__Q/viewform?usp=publish-editor" target="_blank">
+      <button style="background-color:#1b5e20; color:white; border:none; padding:15px 30px; border-radius:8px; font-size:1.1rem; cursor:pointer; transition:0.3s;">
+        📝 Apply Now
+      </button>
+    </a>
+
+    <!-- Donate Now Button -->
+    <button onclick="openDonateOptions()" style="background-color:#2e7d32; color:white; border:none; padding:15px 30px; border-radius:8px; font-size:1.1rem; cursor:pointer; transition:0.3s;">
+      💚 Donate Now
+    </button>
   </div>
 
-  <footer>
-    © 2025 TogetherWeGrow Cooperative | <em>We rise by lifting one another.</em>
-  </footer>
+  
+  <!-- Hidden Donation Options Box -->
+  <div id="donateOptions" style="display:none; margin-top:30px; background:white; border-radius:12px; box-shadow:0 0 15px rgba(0,0,0,0.1); padding:25px; max-width:600px; margin-left:auto; margin-right:auto;">
+    <h3 style="color:#1b5e20; margin-bottom:15px;">Choose Your Donation Method</h3>
 
-  <script>
-    function showForm() {
-      const form = document.getElementById("formContainer");
-      form.style.display = (form.style.display === "none" || form.style.display === "") ? "block" : "none";
-      window.scrollTo({ top: form.offsetTop, behavior: 'smooth' });
-    }
-  </script>
-</body>
+    <!-- Online Payment -->
+    <p style="font-size:1rem; color:#333;">💳 Donate Online (Instant & Secure)</p>
+    <a href="https://flutterwave.com/pay/togetherwegrow" target="_blank">
+      <button style="background-color:#43a047; color:white; border:none; padding:10px 25px; border-radius:6px; cursor:pointer; font-size:1rem; margin:5px;">
+        🌍 Donate via Flutterwave
+      </button>
+    </a>
+    <a href="https://paystack.com/pay/togetherwegrow" target="_blank">
+      <button style="background-color:#008CBA; color:white; border:none; padding:10px 25px; border-radius:6px; cursor:pointer; font-size:1rem; margin:5px;">
+        💸 Donate via Paystack
+      </button>
+    </a>
 
-</html>
+    <hr style="margin:20px 0;">
 
+    <!-- Manual Bank Donation -->
+    <p style="font-size:1rem; color:#333;">🏦 Donate Manually (Bank Transfer)</p>
+    <p style="font-size:1rem; line-height:1.6; color:#444;">
+      <strong>Bank:</strong> Zenith Bank<br>
+      <strong>Account Name:</strong> TogetherWeGrow Cooperative<br>
+      <strong>Account Number:</strong> 1234567890<br>
+      After payment, kindly confirm via WhatsApp: 
+      <a href="https://wa.me/2348168107425" target="_blank" style="color:#2e7d32; text-decoration:none;">Click Here</a>
+    </p>
+
+    <!-- Close Button -->
+    <button onclick="closeDonateOptions()" style="margin-top:10px; background-color:#c62828; color:white; border:none; padding:8px 20px; border-radius:6px; cursor:pointer;">
+      Close
+    </button>
+  </div>
+</section>
+
+<!-- JavaScript for Donation Box -->
+<script>
+function openDonateOptions() {
+  document.getElementById('donateOptions').style.display = 'block';
+}
+function closeDonateOptions() {
+  document.getElementById('donateOptions').style.display = 'none';
+}
+</script>
