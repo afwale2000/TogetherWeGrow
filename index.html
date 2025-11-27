@@ -8,7 +8,7 @@
 
   </p>
   <div id="stats" style="margin: 30px auto; max-width: 600px; background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
-  <h2 style="color:#2e7d32;">TogetherWeGrow Progress 🌱</h2>
+  <h2 style="color:#2e7d32;">TogetherWeGrow🌱 </h2>
   <p style="font-size:1.2rem;">Total Registered Members <strong id="memberCount">526 </strong></p>
   <p style="font-size:1.2rem;">Donation Start By 1st December 2025 <strong id="memberCount"> </strong></p>
   <p style="font-size:1.2rem;">Proposal For grants start by 1st January 2026 <strong id="memberCount"> </strong></p>
@@ -36,11 +36,11 @@
   
   <!-- Hidden Donation Options Box -->
   <div id="donateOptions" style="display:none; margin-top:30px; background:white; border-radius:12px; box-shadow:0 0 15px rgba(0,0,0,0.1); padding:25px; max-width:600px; margin-left:auto; margin-right:auto;">
-    <h3 style="color:#1b5e20; margin-bottom:15px;">Choose Your Donation Method (Use Manual Paymenty Only) </h3>
+    <h3 style="color:#1b5e20; margin-bottom:15px;"> Use Manual Paymenty Only </h3>
 
     <!-- Online Payment -->
-    <p style="font-size:1rem; color:#333;">💳 Donate Online (Instant & Secure)</p>
-    <a href="https://flutterwave_blank">
+    <p style="font-size:1rem; color:#333;">💳 Donate Online (Not Available)</p>
+    <a href="
       <button style="background-color:#43a047; color:white; border:none; padding:10px 25px; border-radius:6px; cursor:pointer; font-size:1rem; margin:5px;">
         🌍 Donate via Flutterwave
       </button>
@@ -74,6 +74,92 @@ function closeDonateOptions() {
   document.getElementById('donateOptions').style.display = 'none';
 }
 </script>
+
+<!-- Feedback Section -->
+<section style="background:#f1f8e9; padding:50px 20px; margin-top:40px; text-align:center; font-family:'Poppins', sans-serif;">
+
+  <h2 style="color:#2e7d32; font-size:2rem; font-weight:700; margin-bottom:10px;">💬 We Value Your Feedback</h2>
+  <p style="color:#444; font-size:1.1rem; max-width:700px; margin:0 auto 30px;">
+    Share your thoughts, suggestions, or encouragement to help strengthen the TogetherWeGrow community.
+  </p>
+
+  <!-- Feedback Form -->
+  <div style="max-width:600px; margin:0 auto; background:white; padding:25px; border-radius:12px; box-shadow:0 0 10px rgba(0,0,0,0.1); text-align:left;">
+
+    <label style="font-size:1.1rem; font-weight:600;">Your Name (Optional)</label>
+    <input id="fbName" type="text"
+      style="width:100%; padding:10px; margin:8px 0 15px; border:1px solid #ccc; border-radius:6px; font-size:1rem;" 
+      placeholder="Enter your name">
+
+    <label style="font-size:1.1rem; font-weight:600;">Rate Your Experience</label>
+    <div style="margin:8px 0 15px; font-size:1.5rem; color:#fbc02d; cursor:pointer;">
+      <span onclick="setRating(1)">⭐</span>
+      <span onclick="setRating(2)">⭐</span>
+      <span onclick="setRating(3)">⭐</span>
+      <span onclick="setRating(4)">⭐</span>
+      <span onclick="setRating(5)">⭐</span>
+    </div>
+
+    <input type="hidden" id="rating" value="0">
+
+    <label style="font-size:1.1rem; font-weight:600;">Your Feedback</label>
+    <textarea id="fbMessage" rows="4"
+      style="width:100%; padding:10px; margin-top:8px; border:1px solid #ccc; border-radius:6px; font-size:1rem;"
+      placeholder="Write your feedback here..."></textarea>
+
+    <button onclick="submitFeedback()" 
+      style="margin-top:20px; background-color:#2e7d32; color:white; border:none; padding:12px 25px; width:100%; border-radius:8px; font-size:1.1rem; cursor:pointer;">
+      Submit Feedback
+    </button>
+  </div>
+
+  <!-- Feedback Display -->
+  <div id="feedbackDisplay" style="margin-top:30px; max-width:700px; margin-left:auto; margin-right:auto;"></div>
+
+</section>
+
+
+<!-- Feedback JavaScript -->
+<script>
+let currentRating = 0;
+
+function setRating(value) {
+  currentRating = value;
+  document.getElementById("rating").value = value;
+}
+
+function submitFeedback() {
+  const name = document.getElementById("fbName").value || "Anonymous";
+  const message = document.getElementById("fbMessage").value;
+  const rating = document.getElementById("rating").value;
+
+  if (!message.trim()) {
+    alert("Please enter feedback before submitting.");
+    return;
+  }
+
+  const display = document.getElementById("feedbackDisplay");
+
+  const fbCard = document.createElement("div");
+  fbCard.style = "background:white; padding:20px; margin-top:15px; border-radius:10px; box-shadow:0 0 8px rgba(0,0,0,0.1); text-align:left;";
+
+  fbCard.innerHTML = `
+    <h3 style="color:#2e7d32; margin-bottom:5px;">${name}</h3>
+    <p style="color:#fbc02d; margin:0;">${"⭐".repeat(rating)}</p>
+    <p style="color:#444; margin-top:10px; font-size:1rem;">${message}</p>
+  `;
+
+  display.prepend(fbCard);
+
+  // Clear form
+  document.getElementById("fbName").value = "";
+  document.getElementById("fbMessage").value = "";
+  document.getElementById("rating").value = 0;
+  currentRating = 0;
+}
+</script>
+
+
 
 
 
